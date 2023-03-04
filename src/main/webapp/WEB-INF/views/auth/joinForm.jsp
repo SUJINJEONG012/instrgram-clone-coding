@@ -30,7 +30,7 @@
 
 						<form class="login__input" action="/auth/join" method="post">
 							<input type="text" name="username" placeholder="유저네임" required="required">
-							<input type="text" name="userpassword" placeholder="패스워드" required="required">
+							<input type="text" name="password" placeholder="패스워드" required="required">
 							<input type="text" name="useremail" placeholder="이메일" required="required">
 							<input type="text" name="name" placeholder="이름" required="required">
 							

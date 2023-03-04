@@ -29,13 +29,15 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(length =30, unique = true)
+	@Column(length =255, unique = true)
 	private String username;
 	
 	@JsonIgnore //json 파싱 불가능하게 아예 막음
 	private String password;
 	
 	private String name; //이름
+	
+	
 	private String website; //자기 홈페이지
 	private String bio; // 자기소개 
 	private String email;
