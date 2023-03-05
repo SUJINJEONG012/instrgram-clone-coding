@@ -18,14 +18,14 @@ public class AuthController {
 
 	private final AuthService authService;
 	
-//	@GetMapping("/login")
-//	public String loginForm() {
-//		return "auth/loginForm";
-//	}
+	@GetMapping("/login")
+	public String loginForm() {
+		return "/auth/loginForm";
+	}
 	
 	@GetMapping("/join")
 	public String joinForm() {
-		return "auth/joinForm";
+		return "/auth/joinForm";
 	}
 	
 	//회원가입 
@@ -33,7 +33,7 @@ public class AuthController {
 	@PostMapping("/join")
 	public @ResponseBody String join(UserJoinReqDto userJoinReqDto){
 	   authService.join(userJoinReqDto.toEntity());
-	   return Script.href("성공 ", "/auth/loginForm");
+	   return Script.href("성공 ", "/auth/login");
 	}
 	
 }

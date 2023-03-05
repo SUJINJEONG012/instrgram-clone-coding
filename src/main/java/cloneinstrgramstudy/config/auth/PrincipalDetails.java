@@ -21,11 +21,6 @@ public class PrincipalDetails implements UserDetails {
 		this.user = user;
 	}
 	
-	public PrincipalDetails(User user, Map<String, Object> attributes) {
-		this.user = user;
-		
-	}
-
 
 	@Override
 	public String getPassword() {
@@ -56,8 +51,8 @@ public class PrincipalDetails implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-	
-	
+
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
@@ -65,7 +60,6 @@ public class PrincipalDetails implements UserDetails {
 		Collection<GrantedAuthority> collectors = new ArrayList<>(); // 자바 유틸꺼임, collectors에 권한을 넣어줘야함
 		collectors.add(()-> "ROLE_"+user.getRole().toString()); // collectors 에 리턴되서 들어간다.
 		//컬렉터에 GrantedAuthority타입을 넣어줘야한다.
- 
 		return collectors;
 	}
 	

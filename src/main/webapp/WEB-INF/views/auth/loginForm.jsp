@@ -25,9 +25,9 @@
 						<img src="/images/instagram-logo.png" alt="인스타그램"  style="display: block; width: 300px; margin: 0 auto;">
 					</h1>
 
-					<form class="login__input" action="/login" method="login">
+					<form class="login__input" action="/login" method="post">
 						<input type="text" name="username" placeholder="유저네임"> <input
-							type="password" name="userpassword" placeholder="비밀번호">
+							type="password" name="password" placeholder="비밀번호">
 						<button type="submit">로그인</button>
 					</form>
 
@@ -50,7 +50,7 @@
 
 
 					<div class="login__register">
-						<span>계정이 없으신가요?</span> <a href="/auth/joinForm">가입하기</a>
+						<span>계정이 없으신가요?</span> <a href="/auth/join">가입하기</a>
 					</div>
 
 				

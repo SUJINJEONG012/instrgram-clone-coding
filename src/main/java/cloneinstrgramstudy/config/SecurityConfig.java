@@ -14,19 +14,12 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
 	
-	//생성자 주입
-	//	private PrincipalDetailsService principalDetailsService;
-		
-		
-	   // encodePWD() 를 호출하면 new BCryptPasswordEncoder() 객체를 리턴받을 수 있다.
+	   // encode() 를 호출하면 new BCryptPasswordEncoder() 객체를 리턴받을 수 있다.
 		@Bean
 		public BCryptPasswordEncoder encode() {
-			 return new BCryptPasswordEncoder(); //스프링이관리 , 필요할때마다 가져다가 사용하면 된다.
+			 return new BCryptPasswordEncoder(); //스프링관리 , 필요할때마다 가져다가 사용하면 된다.
 		 }
 		
-//		protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-//			auth.userDetailsService(principalDetailsService).passwordEncoder(encode());
-//		}
 		@Bean 
 		 public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 	          
@@ -39,7 +32,7 @@ public class SecurityConfig {
 		        	.permitAll() //로그인하지않고 모두 궈한을 가짐 
 		        	.and()
 		        	.formLogin()
-		        	.loginPage("/auth/join")
+		        	.loginPage("/auth/login")
 		        	.loginProcessingUrl("/login") //스프링 시큐리티가 로그인을 가로챈다.
 		        	.defaultSuccessUrl("/"); //정상적으로 요청이 완료
         
