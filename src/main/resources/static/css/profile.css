@@ -1,12 +1,4 @@
-@import "header.css";
-@import "footer.css";
-
-/* Fonts */
-@font-face {
-  font-family: is;
-  src: url(../fonts/billabong.ttf);
-}
-
+@charset "UTF-8";
 
 .profileContainer {
   display: flex;

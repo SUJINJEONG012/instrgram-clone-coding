@@ -3,7 +3,7 @@
 
 
 <footer>
-	<div class="container">
+	<div class="inner">
 		<ul>
 			<li><a href="#">소개</a></li>
 			<li><a href="#">블로그</a></li>

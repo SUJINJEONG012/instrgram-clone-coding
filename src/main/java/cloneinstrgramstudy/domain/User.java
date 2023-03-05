@@ -1,12 +1,14 @@
 package cloneinstrgramstudy.domain;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -49,12 +51,20 @@ public class User {
 	
 	private String role; // USER.ADMIN
 	
+	@OneToMany(mappedBy = "user")
+	private List<Image> images;
 	
 	@CreationTimestamp // 자동으로 만든 시간이 들어감
 	private Timestamp createDate;
 
-
 	
-
+	@OneToMany(mappedBy = "image")
+	private List<Tag> tags;
+	
+	@OneToMany(mappedBy = "image")
+	private List<Likes> likes;
+	 
+	// follow 정보 
+	// comment 댓글
 	
 }
