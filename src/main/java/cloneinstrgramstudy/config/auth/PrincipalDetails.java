@@ -16,10 +16,17 @@ public class PrincipalDetails implements UserDetails {
 	
 	
 	private User user;
+	private Map<String, Object> attributes;
 	
 	public PrincipalDetails(User user) {
 		this.user = user;
 	}
+	public PrincipalDetails(User user, Map<String, Object> attributes) {
+		this.user = user;
+		this.attributes = attributes;
+		//this.oAuth = true;
+	}
+	
 	
 
 	@Override
@@ -62,6 +69,11 @@ public class PrincipalDetails implements UserDetails {
 		//컬렉터에 GrantedAuthority타입을 넣어줘야한다.
 		return collectors;
 	}
+	
+	public Map<String, Object> getAttributes() {
+		return attributes;
+	}
+	
 	
 	
 }

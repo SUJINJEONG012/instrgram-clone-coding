@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -23,22 +25,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-public class Likes {
+@Table(name="follow", uniqueConstraints= { @UniqueConstraint(name="follow_uk", columnNames= {"fromUserId","toUserId"})})
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+public class Follow {
 	
-	@ManyToOne
-	@JoinColumn(name="imageId")
-	private Image image; 
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private int id;
 	
 	@JsonIgnoreProperties({"images"})
 	@ManyToOne
-	@JoinColumn(name="userId")
-	private User user;
+	@JoinColumn(name="fromUserId")
+	private User fromUser; // ~ 로부터 , 팔로우를 하는 애
+	
+	@JsonIgnoreProperties({"images"})
+	@ManyToOne
+	@JoinColumn(name = "toUserId")
+	private User toUser; // ~ 를 팔로우를 당하는 애
 	
 	@CreationTimestamp
 	private Timestamp createDate;
+	
 	
 }
