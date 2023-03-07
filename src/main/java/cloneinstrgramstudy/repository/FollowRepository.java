@@ -12,6 +12,6 @@ public interface FollowRepository extends JpaRepository<Follow, Integer> {
 	
 	//@Modifying
 	@Modifying
-	@Query(value="INSERT INTO follow(fromUserId, toUserId, createDate) VALUES(:fromUserId, :toUserId,now())", nativeQuery = true)
+	@Query(value="INSERT INTO follow(fromUserId, toUserId) VALUES(:fromUserId, :toUserId)", nativeQuery = true)
 	 int mFollow(int fromUserId, int toUserId);
 }

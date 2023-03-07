@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="follow", uniqueConstraints= { @UniqueConstraint(name="follow_uk", columnNames= {"fromUserId","toUserId"})})
+//@Table(name="follow", uniqueConstraints= { @UniqueConstraint(name="follow_uk", columnNames= {"fromUserId","toUserId"})})
 
 public class Follow {
 	
@@ -33,12 +33,12 @@ public class Follow {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
 	
-	@JsonIgnoreProperties({"images"})
+	//@JsonIgnoreProperties({"images"})
 	@ManyToOne
 	@JoinColumn(name="fromUserId")
 	private User fromUser; // ~ 로부터 , 팔로우를 하는 애
 	
-	@JsonIgnoreProperties({"images"})
+	//@JsonIgnoreProperties({"images"})
 	@ManyToOne
 	@JoinColumn(name = "toUserId")
 	private User toUser; // ~ 를 팔로우를 당하는 애

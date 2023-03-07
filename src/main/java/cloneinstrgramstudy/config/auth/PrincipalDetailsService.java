@@ -21,6 +21,7 @@ public class PrincipalDetailsService implements UserDetailsService {
 		System.out.println("로그인 진행중");
 		
 		User principal = userRepository.findByUsername(username);
+		System.out.println("principal:: " + principal); //출력안됌
 		
 		if (principal == null) {			
 			return null;

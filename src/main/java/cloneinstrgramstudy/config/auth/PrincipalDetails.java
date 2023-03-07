@@ -70,10 +70,6 @@ public class PrincipalDetails implements UserDetails {
 		return collectors;
 	}
 	
-	public Map<String, Object> getAttributes() {
-		return attributes;
-	}
-	
 	
 	
 }

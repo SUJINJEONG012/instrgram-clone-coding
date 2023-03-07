@@ -20,7 +20,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -37,8 +36,7 @@ public class User {
 	
 	@JsonIgnore //json 파싱 불가능하게 아예 막음
 	private String password;
-	
-	
+
 	private String name; //이름
 	private String website; //자기 홈페이지
 	private String bio; // 자기소개 

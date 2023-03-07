@@ -16,9 +16,7 @@ public class FollowController {
 
 	private final FollowService followService;
 	
-
-	
-	@PostMapping("/follow/{toUserId}") // /follow/3
+	@PostMapping("/follow/{toUserId}") // /follow/1
 	public CMRespDto<?> follow(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int toUserId) {
 		int result = followService.팔로우(principalDetails.getUser().getId(), toUserId);
 		return new CMRespDto<>(1,result);

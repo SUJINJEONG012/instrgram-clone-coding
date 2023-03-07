@@ -1,7 +1,5 @@
 package cloneinstrgramstudy.service;
 
-import javax.persistence.EntityManager;
-
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
