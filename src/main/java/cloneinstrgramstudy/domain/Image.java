@@ -32,8 +32,8 @@ public class Image {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private String caption; // 내용
-	private String postImageUrl;
+	private String caption; // 해당 이미지를 설명하는 내용
+	private String postImageUrl; //image가 서버로 전송되어 저장되는 경로
 
 	//@JsonIgnoreProperties({"images"})
 	@ManyToOne // 당연히 기본은 EAGER
