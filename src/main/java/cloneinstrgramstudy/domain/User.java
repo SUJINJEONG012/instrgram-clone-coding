@@ -49,8 +49,8 @@ public class User {
 	
 	private String role; // USER.ADMIN
 	
-	@OneToMany(mappedBy = "user")
-	private List<Image> images;
+//	@OneToMany(mappedBy = "user")
+//	private List<Image> images;
 	
 
 	@CreationTimestamp // 자동으로 만든 시간이 들어감

@@ -21,12 +21,6 @@ public class PrincipalDetails implements UserDetails {
 	public PrincipalDetails(User user) {
 		this.user = user;
 	}
-	public PrincipalDetails(User user, Map<String, Object> attributes) {
-		this.user = user;
-		this.attributes = attributes;
-		//this.oAuth = true;
-	}
-	
 	
 
 	@Override

@@ -13,11 +13,4 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class ImageService {
 	
-	private final ImageRepository imageRepository;
-	
-	@Transactional(readOnly = true)
-	public List<Image> 인기사진(int principalId){
-		return imageRepository.mExplore(principalId);
-	}
-	
 }
