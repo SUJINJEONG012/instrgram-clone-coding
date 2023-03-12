@@ -13,6 +13,15 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
 public class Follow {
 
@@ -20,19 +29,16 @@ public class Follow {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-//	@JsonIgnoreProperties({"images"})
 	@ManyToOne
 	@JoinColumn(name = "fromUserId")
 	private User fromUser; // ~~로 부터, 팔로우를 하는 애
 	
-	@JsonIgnoreProperties({"images"})
+	
 	@ManyToOne
 	@JoinColumn(name = "toUserId")
 	private User toUser; // ~~를, 팔로우를 당하는 애
 	
 	@CreationTimestamp // 자동으로 현재시간 담김
 	private Timestamp createDate;
-	
-	
 	
 }

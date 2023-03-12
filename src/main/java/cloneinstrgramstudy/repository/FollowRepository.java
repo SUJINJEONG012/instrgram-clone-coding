@@ -12,10 +12,8 @@ import cloneinstrgramstudy.domain.Follow;
 
 public interface FollowRepository extends JpaRepository<Follow, Integer> {
 
-	@Transactional // javax 의 트랜잭션, 서비스에서는 프레임워크
-	
-	@Query(value = "INSERT INTO Follow(fromUserId, toUserId, createDate) VALUES(?1fromUserId, ?2toUserId,now())", nativeQuery = true)
+	@Modifying // javax 의 트랜잭션, 서비스에서는 프레임워크
+	@Query(value = "INSERT INTO Follow(fromUserId, toUserId) VALUES(:fromUserId, :toUserId )", nativeQuery = true)
 	int mFollow(int fromUserId, int toUserId); // prepareStatement updateQuery() => -1, 0, 1 응답의 결과 그래서 int로 받기
-
 	
 }

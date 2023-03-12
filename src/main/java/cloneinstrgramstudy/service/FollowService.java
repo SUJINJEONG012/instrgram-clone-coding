@@ -1,5 +1,6 @@
 package cloneinstrgramstudy.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,7 +11,8 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class FollowService {
 
-	private final FollowRepository followRepository;
+	@Autowired
+	private FollowRepository followRepository;
 	
 	@Transactional
 	public int 팔로우(int fromUserId, int toUserId) {

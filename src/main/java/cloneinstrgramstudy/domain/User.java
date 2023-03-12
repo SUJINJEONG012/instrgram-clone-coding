@@ -1,5 +1,6 @@
 package cloneinstrgramstudy.domain;
 
+import java.awt.Image;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -48,9 +49,6 @@ public class User {
 	private String provider; //제공자, google, facebook, naver 구분/ provider가 null이면 기본 로그인
 	
 	private String role; // USER.ADMIN
-	
-//	@OneToMany(mappedBy = "user")
-//	private List<Image> images;
 	
 
 	@CreationTimestamp // 자동으로 만든 시간이 들어감
